@@ -69,11 +69,13 @@ Mostrar las variables  valores del servidor MYSQL</br>
 SHOW VARIABLES;</br>
 show variables like "%connections%";</br>
 me da max_connections=150</br>
+### EN CALIENTE (TEMPORAL)
 set @@global.max_connections=200</br>
 ahora me dan max_connections=200</br>
 esta es una medida en caliente que solo se mantiene hasta que mysql se reinicia.</br>
 
-si queremos hacer esta medida permanente debemos modificar nuestro my.cnf</br>
+### EN FRIO (PERMANENTE)
+Si queremos hacer esta medida permanente debemos modificar nuestro my.cnf</br>
 /users/mys57/data/my.cnf</br>
 max_connections = 200</br>
 
