@@ -2,8 +2,8 @@
 root 
 pomv5000
 
-ARBORESCENCIA
-=============
+#ARBORESCENCIA
+
 /soft/mys55/
 	/bin/
 		/mysql
@@ -56,3 +56,9 @@ Se puede localizar en /users/mys50/data/my.cnf
 
 Mostrar las variables  valores del servidor MYSQL
 SHOW VARIABLES;
+show variables like "%connections%";
+ 
+CONECTARSE A LA BASE DE DATOS DEL SISTEMA
+==========================================
+ /soft/mys57/bin/mysql -u exploit -pexploit
+
