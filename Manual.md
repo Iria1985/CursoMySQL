@@ -197,22 +197,23 @@ Seleccionar todas las ciudades ordenadas por el id -> Sólo las 10 primeras. </b
 SELECT * FROM City ORDER BY Id LIMIT 8,2;</br>
 Seleccionar todas las ciudades ordenadas por el id -> Desde la 8 hasta la 10, es decir, 8 => desde la 8, 2=> desde 8 pon 2 más, en total 8,9,10. </br>
 
-SELECT CONTINENT FROM Country;
+SELECT CONTINENT FROM Country;</br>
 
-SELECT DISTINCT Continent FROM Country;
-
-
-SELECT Name, Population, Population * 1.20 AS NewPop FROM Country LIMIT 5;
-Las expresiones matemáticas "standard" están permitidas.
-El comando AS nos permite nombrar la columna.
+SELECT DISTINCT Continent FROM Country;</br>
 
 
-SELECT --> continent, region, SUM(population)
-FROM -- > Country
-WHERE
-GROUP BY 
-ORDER BY
-LIMIT
+SELECT Name, Population, Population * 1.20 AS NewPop FROM Country LIMIT 5;</br>
+Las expresiones matemáticas "standard" están permitidas. </br>
+El comando AS nos permite nombrar la columna.</br>
+Creo una columna nueva llamada NewPop en la que va a mostrar los datos de la tabla Population multiplicada por 1.20 </br>
+
+
+SELECT --> continent, region, SUM(population) </br>
+FROM -- > Country</br>
+WHERE</br>
+GROUP BY </br>
+ORDER BY</br>
+LIMIT</br>
 
 
 
