@@ -9,8 +9,10 @@
 * usuario: exploit
 * pass: exploit
 
-## CONECTARSE A LA BASE DE DATOS DEL SISTEMA
+```
+Para conectarse a la base de datos usamos el siguiente comando </br>
 /soft/mys57/bin/mysql -u exploit -pexploit
+ ```
  
 ## ARBORESCENCIA
 <pre>
