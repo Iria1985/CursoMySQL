@@ -137,13 +137,13 @@ Conectamos a mysql
 
 ## COMANDOS INTERESANTES DE SQL
 
-SHOW databases; --> Visualizar las BDs
-USE world; --> Utilizar una BD en concreto
-SHOW tables; --> Visualizar las tablas de una BD
-DESCRIBE country; --> Visualizar la estructura de una tabla
-SELECT * FROM country; --> Visualizar la contenido de una tabla
-SELECT NOW(), VERSION(); --> Mostrar hora y versión de mysqld
-QUIT --> Salir
+SHOW databases; --> Visualizar las BDs </br>
+USE world; --> Utilizar una BD en concreto </br>
+SHOW tables; --> Visualizar las tablas de una BD </br>
+DESCRIBE country; --> Visualizar la estructura de una tabla </br>
+SELECT * FROM country; --> Visualizar la contenido de una tabla </br>
+SELECT NOW(), VERSION(); --> Mostrar hora y versión de mysqld </br>
+QUIT --> Salir </br>
 
 
 show databases;
