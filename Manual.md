@@ -1,8 +1,11 @@
-192.168.56.101
-root 
-pomv5000
+# CURSO DE MYSQL
 
-# ARBORESCENCIA
+## DATOS DE CONEXIÓN
+192.168.56.101 \r
+root \r
+pomv5000 \r
+
+## ARBORESCENCIA
 
 /soft/mys55/
 	/bin/
@@ -57,7 +60,10 @@ Se puede localizar en /users/mys50/data/my.cnf
 Mostrar las variables  valores del servidor MYSQL
 SHOW VARIABLES;
 show variables like "%connections%";
- 
+me da max_connections=150
+set @@global.max_connections=200
+ahora me dan max_connections=200
+
 CONECTARSE A LA BASE DE DATOS DEL SISTEMA
 ==========================================
  /soft/mys57/bin/mysql -u exploit -pexploit
