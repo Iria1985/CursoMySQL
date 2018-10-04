@@ -21,11 +21,11 @@
 			mysqldump
 			mysqlbinlog
 		/fileso/
-		profile => 100% psa. Script de menú eso_001.sh se almacena aquí
-			/include
-			/lib
-			/man
-			/share
+			profile => 100% psa. Script de menú eso_001.sh se almacena aquí
+		/include
+		/lib
+		/man
+		/share
 
 /users --> no crezca. limitado a 30 gigas => Tenemos los datos.
 	/mys50
