@@ -107,20 +107,20 @@ printf "" > general.log
 printf "" > 
 ```
 
-En la MV la carpeta de logs está en "/users/mys57/logs". Pero en la realidad debería estar en "/logs".
+En la MV la carpeta de logs está en "/users/mys57/logs". Pero en la realidad debería estar en "/logs".</br>
 
-## PARAR/ARRANCAR Y VERIFICAR QUE FUNCIONA (VER GAOPS)
-=============pendiente explicación Alba===============
-FICA => Nosotros + Monillos
-GAOP => Monillos
+## PARAR/ARRANCAR Y VERIFICAR QUE FUNCIONA (VER GAOPS)</br>
+=============pendiente explicación Alba===============</br>
+FICA => Nosotros + Monillos</br>
+GAOP => Monillos</br>
 
 Lo podemos podemos vetr en un documento daip (gamme operatioire) para mysql en la web de la documentacion operacional necesaria para las funciones de pilotaje y vigilancia.
 
 
 ## ALGUNAS OPCIONES PARA LANZAR  EL CLIENTE MYSQL.
-Pasar comando en un texto externo:
-cd /users/
-vi consulta.sql
+Pasar comando en un texto externo:</br>
+cd /users/</br>
+vi consulta.sql</br>
 ```
 show variables;
 ```
@@ -130,9 +130,9 @@ Conectamos a mysql
 /soft/mys57/bin/mysql -u exploit -pexploit < /users/consulta.sql > /users/resultado.txt
  ```
 
-**-h training.mysql.com** : hosts cuando el servidor mysql esta en otra maquina
-**-u usuario** : indica el usuario musql con el que te conectas
-**-ppassword** : el password del usuario
+**-h training.mysql.com** : hosts cuando el servidor mysql esta en otra maquina </br>
+**-u usuario** : indica el usuario musql con el que te conectas</br>
+**-ppassword** : el password del usuario</br>
 
 
 ## COMANDOS INTERESANTES DE SQL
@@ -145,12 +145,10 @@ SELECT * FROM country; --> Visualizar la contenido de una tabla </br>
 SELECT NOW(), VERSION(); --> Mostrar hora y versión de mysqld </br>
 QUIT --> Salir </br>
 
-
-show databases;
-muestra las bases de datos
-show variables;
+```
+show databases; --> muestra las bases de datos
 show processlist; > quien está utilizando la base de datos.
-
+```
 
 
 
