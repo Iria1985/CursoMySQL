@@ -134,10 +134,16 @@ Conectamos a mysql
 **-u usuario** : indica el usuario musql con el que te conectas</br>
 **-ppassword** : el password del usuario</br>
 
+### IMPORTANDO BASE DE DATOS
+Primero creamos la base de datos.
+1. Nos conectamos --> /soft/mys57/bin/mysql -u exploit -pexploit
+2. Creamos la bbdd --> CREATE DATABASE world;
+3. Importamos --> /soft/mys57/bin/mysql -u exploit -pexploit world < ./world.sql
 
 ## COMANDOS INTERESANTES DE SQL
 
 SHOW databases; --> Visualizar las BDs </br>
+CREATE DATABASE world; --> Crear bbdd </br>
 USE world; --> Utilizar una BD en concreto </br>
 SHOW tables; --> Visualizar las tablas de una BD </br>
 DESCRIBE country; --> Visualizar la estructura de una tabla </br>
