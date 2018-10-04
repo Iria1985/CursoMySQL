@@ -10,12 +10,12 @@
 * pass: exploit
 
 ```
-Para conectarse a la base de datos usamos el siguiente comando </br>
+Para conectarse a la base de datos usamos el siguiente comando 
 /soft/mys57/bin/mysql -u exploit -pexploit
  ```
  
 ## ARBORESCENCIA
-<pre>
+```
 /soft/mys55/
 		/bin/
 				/mysql
@@ -50,7 +50,7 @@ Para conectarse a la base de datos usamos el siguiente comando </br>
 		/scripts
 
 /logs --> antes se guardaban en users ahora se crean en /log.
-</pre>
+```
 Schemas = Directorios</br>
 
 Al crear un bbdd creamos un directorio</br>
