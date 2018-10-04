@@ -1,9 +1,11 @@
 # CURSO DE MYSQL
 
 ## DATOS DE CONEXIÓN
-192.168.56.101 \r
-root \r
-pomv5000 \r
+192.168.56.101
+
+root
+
+pomv5000
 
 ## ARBORESCENCIA
 
