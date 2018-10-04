@@ -14,40 +14,40 @@
  
 ## ARBORESCENCIA
 <pre>
-/soft/mys55/<br/>
-	/bin/</br>
-		/mysql</br>
-			mysqlhotcopy</br>
-			mysqldump</br>
-			mysqlbinlog</br>
-		/fileso/</br>
-		profile => 100% psa. Script de menú eso_001.sh se almacena aquí</br>
-			/include</br>
-			/lib</br>
-			/man</br>
-			/share</br>
+/soft/mys55/
+	/bin/
+		/mysql
+			mysqlhotcopy
+			mysqldump
+			mysqlbinlog
+		/fileso/
+		profile => 100% psa. Script de menú eso_001.sh se almacena aquí
+			/include
+			/lib
+			/man
+			/share
 
-/users --> no crezca. limitado a 30 gigas => Tenemos los datos.</br>
-	/mys50</br>
-		/data/</br>
-			my.cnf</br>
-			/mysql</br>
-			/mibase --> creamos un link a /log</br>
-		/logs/</br>
-			general.log</br>
-			error.log</br>
-			slow-queries.log</br>
-		/socket</br>
-	/prd00</br>
-		/base</br>
-		/web</br>
-			/html</br>
-				index.php</br>
-			/uploads</br>
-			/inc</br>
-		/scripts</br>
+/users --> no crezca. limitado a 30 gigas => Tenemos los datos.
+	/mys50
+		/data/
+			my.cnf
+			/mysql
+			/mibase --> creamos un link a /log
+		/logs/
+			general.log
+			error.log
+			slow-queries.log
+		/socket
+	/prd00
+		/base
+		/web
+			/html
+				index.php
+			/uploads
+			/inc
+		/scripts
 
-/logs --> antes se guardaban en users ahora se crean en /log.</br>
+/logs --> antes se guardaban en users ahora se crean en /log.
 </pre>
 Schemas = Directorios</br>
 
@@ -84,8 +84,14 @@ menu eso_001.sh</br>
 /soft/mys57/fileso/MENU.sh</br>
  
 ## LOGS
+### TIPOS DE LOG
 * **"General log" (general query log)**: es el log que guarda todos los "statements" que el servidor recive desde sus clientes. Escirbe absolutamente todo lo que se hace. Se activa cuando se hace una instalación nueva y luego se desactiva pero en PSA nunca se desactiva con lo que se va llenando de logs el espacio.
 * **"Log binario" (binary log)**: Guardar solamente los "statements" que modifican datos. Log interesante pq solo escribe los cambios que se hacen en la bbdd. Haces copia de la bdd a las 2 de la mañana, si haces consultas no escribe nada pero si haces algún cambio guarda esas modificaciones en el log. Puedes coger la copia de la bbdd y coger el log bin con los cambios que se han realizado.
 * **"Log de consultas lentas" (slow query log)**: Contiene un registro de consultas que precisaron mucho tiempo para ejecutarse. Solo guardan las consultas que se realizan a las bbddd. Sirve para cuando realizamos una busqueda y tarda mucho en mostrar la información, es donde podemos depurar porque está ocurriendo esta lentitud. (Ver si los datos los tiene que cruzar con muchas tablas, etc).
 * **"Log de error" (error log)**: Guarda mensajes de diagnóstico del servidor sobre los "start-ups", "shut-downs" y condiciones anormales que se puedan producir.
+* **"Log bin index (log-bin.index)**":
+
+### ROTACIÓN DE LOGS
+
+
 
