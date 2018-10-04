@@ -189,9 +189,30 @@ Si en vez de terminar las sentencias con ; utilizamos \G nos muestra la informac
 
 
 
+## COMANDOS
+### SELECT
+
+SELECT * FROM City ORDER BY Id LIMIT 10;</br>
+Seleccionar todas las ciudades ordenadas por el id -> Sólo las 10 primeras. </br>
+SELECT * FROM City ORDER BY Id LIMIT 8,2;</br>
+Seleccionar todas las ciudades ordenadas por el id -> Desde la 8 hasta la 10, es decir, 8 => desde la 8, 2=> desde 8 pon 2 más, en total 8,9,10. </br>
+
+SELECT CONTINENT FROM Country;
+
+SELECT DISTINCT Continent FROM Country;
 
 
+SELECT Name, Population, Population * 1.20 AS NewPop FROM Country LIMIT 5;
+Las expresiones matemáticas "standard" están permitidas.
+El comando AS nos permite nombrar la columna.
 
+
+SELECT --> continent, region, SUM(population)
+FROM -- > Country
+WHERE
+GROUP BY 
+ORDER BY
+LIMIT
 
 
 
