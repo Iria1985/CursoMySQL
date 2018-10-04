@@ -95,5 +95,71 @@ menu eso_001.sh</br>
 
 ### ROTACIÓN DE LOGS
 
+1. Parar el servidor MySQL. </br>
+2. Copiar los logs a la salvaguarda (con alguna utilidad para INDUS). </br>
+3. Purgar los logs: (en muchos casos sólo se hace con el "general.log" que es el que más se dispara de tamaño). 
+
+```
+Esto es una chapuza no hacer salvo extrema necesidad
+
+printf "" > error.log
+printf "" > general.log
+printf "" > 
+```
+
+En la MV la carpeta de logs está en "/users/mys57/logs". Pero en la realidad debería estar en "/logs".
+
+## PARAR/ARRANCAR Y VERIFICAR QUE FUNCIONA (VER GAOPS)
+=============pendiente explicación Alba===============
+FICA => Nosotros + Monillos
+GAOP => Monillos
+
+Lo podemos podemos vetr en un documento daip (gamme operatioire) para mysql en la web de la documentacion operacional necesaria para las funciones de pilotaje y vigilancia.
+
+
+## ALGUNAS OPCIONES PARA LANZAR  EL CLIENTE MYSQL.
+Pasar comando en un texto externo:
+cd /users/
+vi consulta.sql
+```
+show variables;
+```
+
+Conectamos a mysql
+```
+/soft/mys57/bin/mysql -u exploit -pexploit < /users/consulta.sql > /users/resultado.txt
+ ```
+
+**-h training.mysql.com** : hosts cuando el servidor mysql esta en otra maquina
+**-u usuario** : indica el usuario musql con el que te conectas
+**-ppassword** : el password del usuario
+
+
+## COMANDOS INTERESANTES DE SQL
+
+SHOW databases; --> Visualizar las BDs
+USE world; --> Utilizar una BD en concreto
+SHOW tables; --> Visualizar las tablas de una BD
+DESCRIBE country; --> Visualizar la estructura de una tabla
+SELECT * FROM country; --> Visualizar la contenido de una tabla
+SELECT NOW(), VERSION(); --> Mostrar hora y versión de mysqld
+QUIT --> Salir
+
+
+show databases;
+muestra las bases de datos
+show variables;
+show processlist; > quien está utilizando la base de datos.
+
+
+
+
+
+
+
+
+
+
+
 
 
