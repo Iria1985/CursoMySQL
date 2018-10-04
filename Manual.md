@@ -2,7 +2,7 @@
 root 
 pomv5000
 
-#ARBORESCENCIA
+# ARBORESCENCIA
 
 /soft/mys55/
 	/bin/
