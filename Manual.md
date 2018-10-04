@@ -91,7 +91,28 @@ menu eso_001.sh</br>
 * **"Log binario" (binary log)**: Guardar solamente los "statements" que modifican datos. Log interesante pq solo escribe los cambios que se hacen en la bbdd. Haces copia de la bdd a las 2 de la mañana, si haces consultas no escribe nada pero si haces algún cambio guarda esas modificaciones en el log. Puedes coger la copia de la bbdd y coger el log bin con los cambios que se han realizado.
 * **"Log de consultas lentas" (slow query log)**: Contiene un registro de consultas que precisaron mucho tiempo para ejecutarse. Solo guardan las consultas que se realizan a las bbddd. Sirve para cuando realizamos una busqueda y tarda mucho en mostrar la información, es donde podemos depurar porque está ocurriendo esta lentitud. (Ver si los datos los tiene que cruzar con muchas tablas, etc).
 * **"Log de error" (error log)**: Guarda mensajes de diagnóstico del servidor sobre los "start-ups", "shut-downs" y condiciones anormales que se puedan producir.
-* **"Log bin index (log-bin.index)**":
+* **"Log bin index (log-bin.index)**": Index de los index binarios.
+```
+ cat log-bin.index
+/users/mys57/logs/log-bin.000001
+/users/mys57/logs/log-bin.000002
+/users/mys57/logs/log-bin.000003
+/users/mys57/logs/log-bin.000004
+/users/mys57/logs/log-bin.000005
+/users/mys57/logs/log-bin.000006
+/users/mys57/logs/log-bin.000007
+/users/mys57/logs/log-bin.000008
+/users/mys57/logs/log-bin.000009
+/users/mys57/logs/log-bin.000010
+/users/mys57/logs/log-bin.000011
+/users/mys57/logs/log-bin.000012
+/users/mys57/logs/log-bin.000013
+/users/mys57/logs/log-bin.000014
+```
+Son binarios así que no podemos visualizarlos. Si quisieramos visualizarlos deberíamos utilizar la herramienta **mysqlbinlog** 
+```
+/users/mys57/bin/mysqlbinlog /users/mys57/logs/log-bin.000014 > /users/mys57/resultado-log.txt
+```
 
 ### ROTACIÓN DE LOGS
 
@@ -133,6 +154,13 @@ Conectamos a mysql
 **-h training.mysql.com** : hosts cuando el servidor mysql esta en otra maquina </br>
 **-u usuario** : indica el usuario musql con el que te conectas</br>
 **-ppassword** : el password del usuario</br>
+**database** : Nombre de la base de datos a utilizar </br>
+**Redirecciones** : 
+```
+	< importo 
+	> exporto
+```
+**  ** : 
 
 ### IMPORTANDO BASE DE DATOS
 Primero creamos la base de datos.
@@ -140,13 +168,14 @@ Primero creamos la base de datos.
 2. Creamos la bbdd --> CREATE DATABASE world;
 3. Importamos --> /soft/mys57/bin/mysql -u exploit -pexploit world < ./world.sql
 
-## COMANDOS INTERESANTES DE SQL
+## COMANDOS INTERESANTES DE MYSQL
 
 SHOW databases; --> Visualizar las BDs </br>
 CREATE DATABASE world; --> Crear bbdd </br>
 USE world; --> Utilizar una BD en concreto </br>
 SHOW tables; --> Visualizar las tablas de una BD </br>
 DESCRIBE country; --> Visualizar la estructura de una tabla </br>
+SHOW CREATE TABLE Country; --> Visualizar la estructura de una tabla </br>
 SELECT * FROM country; --> Visualizar la contenido de una tabla </br>
 SELECT NOW(), VERSION(); --> Mostrar hora y versión de mysqld </br>
 QUIT --> Salir </br>
