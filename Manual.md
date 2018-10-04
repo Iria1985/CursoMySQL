@@ -9,10 +9,10 @@
 * usuario: exploit
 * pass: exploit
 
-# CONECTARSE A LA BASE DE DATOS DEL SISTEMA
+## CONECTARSE A LA BASE DE DATOS DEL SISTEMA
 /soft/mys57/bin/mysql -u exploit -pexploit
  
-# ARBORESCENCIA
+## ARBORESCENCIA
 /soft/mys55/
 	/bin/
 		/mysql
