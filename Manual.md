@@ -155,6 +155,8 @@ QUIT --> Salir </br>
 show databases; --> muestra las bases de datos
 show processlist; > quien está utilizando la base de datos.
 ```
+## TRUQUILLOS
+Si en vez de terminar las sentencias con ; utilizamos \G nos muestra la información ordenada de otra manera.
 
 
 
