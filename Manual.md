@@ -14,71 +14,75 @@
  
 ## ARBORESCENCIA
 /soft/mys55/<br/>
-	/bin/
-		/mysql
-			mysqlhotcopy
-			mysqldump
-			mysqlbinlog
-		/fileso/
-		profile => 100% psa. Script de menú eso_001.sh se almacena aquí
-			/include
-			/lib
-			/man
-			/share	
+	/bin/</br>
+		/mysql</br>
+			mysqlhotcopy</br>
+			mysqldump</br>
+			mysqlbinlog</br>
+		/fileso/</br>
+		profile => 100% psa. Script de menú eso_001.sh se almacena aquí</br>
+			/include</br>
+			/lib</br>
+			/man</br>
+			/share</br>
 
-/users --> no crezca. limitado a 30 gigas => Tenemos los datos.
-	/mys50
-		/data/
-			my.cnf
-			/mysql
-			/mibase --> creamos un link a /log
-		/logs/
-			general.log
-			error.log
-			slow-queries.log
-		/socket
-	/prd00
-		/base
-		/web
-			/html
-				index.php
-			/uploads
-			/inc
-		/scripts
+/users --> no crezca. limitado a 30 gigas => Tenemos los datos.</br>
+	/mys50</br>
+		/data/</br>
+			my.cnf</br>
+			/mysql</br>
+			/mibase --> creamos un link a /log</br>
+		/logs/</br>
+			general.log</br>
+			error.log</br>
+			slow-queries.log</br>
+		/socket</br>
+	/prd00</br>
+		/base</br>
+		/web</br>
+			/html</br>
+				index.php</br>
+			/uploads</br>
+			/inc</br>
+		/scripts</br>
 
-/logs --> antes se guardaban en users ahora se crean en /log.
+/logs --> antes se guardaban en users ahora se crean en /log.</br>
 
-Schemas = Directorios
+Schemas = Directorios</br>
 
-Al crear un bbdd creamos un directorio
-Tablas --> (.frm files)
-MyISAM: frm + MYD + MYI
-InnoDB: frm + ibd + (ibdata)
+Al crear un bbdd creamos un directorio</br>
+Tablas --> (.frm files)</br>
+MyISAM: frm + MYD + MYI</br>
+InnoDB: frm + ibd + (ibdata)</br>
 
-BBDD de sistema: mysql
-Información sobre usuarios, privilegios, contenidos de ayuda, etc.
+BBDD de sistema: mysql</br>
+Información sobre usuarios, privilegios, contenidos de ayuda, etc.</br>
 
-INSTALACIÓN MYSQL
-==================
-Fichero de configuración MYSQL en el servidor, es común para todos los proyectos instalados en el servidor.
-Se puede localizar en /users/mys50/data/my.cnf
+## INSTALACIÓN MYSQL
 
-CAMBIOS DE VARIABLES
-======================
-Mostrar las variables  valores del servidor MYSQL
-SHOW VARIABLES;
-show variables like "%connections%";
-me da max_connections=150
-set @@global.max_connections=200
-ahora me dan max_connections=200
-esta es una medida en caliente que solo se mantiene hasta que mysql se reinicia.
+Fichero de configuración MYSQL en el servidor, es común para todos los proyectos instalados en el servidor.</br>
+Se puede localizar en /users/mys50/data/my.cnf</br>
 
-si queremos hacer esta medida permanente debemos modificar nuestro my.cnf
-/users/mys57/data/my.cnf
-max_connections = 200
+## CAMBIOS DE VARIABLES
 
-menu eso_001.sh
-/soft/mys57/fileso/MENU.sh
+Mostrar las variables  valores del servidor MYSQL</br>
+SHOW VARIABLES;</br>
+show variables like "%connections%";</br>
+me da max_connections=150</br>
+set @@global.max_connections=200</br>
+ahora me dan max_connections=200</br>
+esta es una medida en caliente que solo se mantiene hasta que mysql se reinicia.</br>
+
+si queremos hacer esta medida permanente debemos modificar nuestro my.cnf</br>
+/users/mys57/data/my.cnf</br>
+max_connections = 200</br>
+
+menu eso_001.sh</br>
+/soft/mys57/fileso/MENU.sh</br>
  
-
+## LOGS
+* "General log" (general query log): es el log que guarda todos los "statements" que el servidor recive desde sus clientes. Escirbe absolutamente todo lo que se hace. Se activa cuando se hace una instalación nueva y luego se desactiva pero en PSA nunca se desactiva con lo que se va llenando de logs el espacio.
+* "log binario" (binary log): Guardar solamente los "statements" que modifican datos. Log interesante pq solo escribe los cambios que se hacen en la bbdd. Haces copia de la bdd a las 2 de la mañana, si haces consultas no escribe nada pero si haces algún cambio guarda esas modificaciones en el log. Puedes coger la copia de la bbdd y coger el log bin con los cambios que se han realizado.
+* "log de consultas lentas" (slow query log): Contiene un registro de consultas que precisaron mucho tiempo para ejecutarse. Solo guardan las consultas que se realizan a las bbddd. Sirve para cuando realizamos una busqueda y tarda mucho en mostrar la información, es donde podemos depurar porque está ocurriendo esta lentitud. (Ver si los datos los tiene que cruzar con muchas tablas, etc).
+* "log de error" (error log): Guarda mensajes de diagnóstico del servidor sobre los "start-ups", "shut-downs" y condiciones anormales que se puedan producir.
 
