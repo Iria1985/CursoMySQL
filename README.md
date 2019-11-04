@@ -1,4 +1,4 @@
-# CursoMySQL
+# MySQL
 ### Algunos trucos para MySQL
 
 1. Conectarse al contenedor con USER/PASSWORD:  $ docker exec -i CONTAINER mysql -u USER -pPASSWORD
